@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-blue-theme: rgb(23 28 43);
+    --secondary-blue-theme: rgb(62 68 84);
+}
+.main_container{
+    display: flex;
+    width: 100%;
+    height: 143.5vh;
+    overflow: hidden;
+}
+.toolbar{
+    background: var(--primary-blue-theme) ;
+    width: 22%;
+    overflow-y: scroll;
+    padding-top: 6rem;
+    position: absolute;
+    z-index: 7;
+}
+.flow_chart_canvas{
+    height: auto;
+    width: 100%;
+    
+}
+.heading2{
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+    font-weight: 500;
+    font-size: 20px;
+}
+.selection_board{
+    padding: 1rem;
+    margin: 1rem 2rem;
+    border-radius: 5px;
+    background: var(--secondary-blue-theme);
+    display: flex;
+    flex-direction: column;
+}
+.selection_board > h6{
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: 100;
+}
+.selection_board .shapes{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+.selection_board .shapes .shape{
+    background: white;
+    margin-top: 1rem;
+    cursor: grab;
+}
+.rectangle{
+    height: 2rem;
+    width: 5rem;
+    border-radius: 2px;
+    
+}
+.text{
+    width: 5rem;
+    height: 2rem;
+    background-color: transparent !important;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+.ellipse{
+    
+    height: 3rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+.square{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2px;
+}
+.rhombus{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    margin-top: 2rem !important;
+}
+.parallelogram{
+    
+    height: 2rem;
+    width: 5rem;
+    border-radius: 2px;
+    transform: skew(20deg);
+    margin-top: 2rem !important;
+}
+.grab{
+    cursor: grab;
+}
+.auto{
+    cursor: default;
+}
+#popup_message{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.take_input_popup{
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 5px 0px;
+    position: relative;
+}
+.take_input_popup h3{
+    font-weight: 500;
+}
+.take_input_popup input{
+    margin: 1rem;
+    font-size: 1rem;
+    outline: none;
+}
+.button1{
+    padding: 10px 30px;
+    font-weight: 6;
+    cursor: pointer;
+    background: var(--primary-blue-theme);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+}
+.nopopup{
+    display: none;
+}
+.crossButton{
+    position: absolute;
+    top: -16px;
+    left: 96%;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+.input_field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shape_heading{
+    margin: 1rem;
+    font-size: 18px;
+    color: #cccccc;
+    font-weight: 500;
+    margin-left: 2rem;
+}
+.selection_board .color_options{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.selection_board .color_options h4{
+    font-weight: 400;
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track{
+    border: 7px solid #232943;
+    box-shadow: inset 0 0 2.5px 2px rgba(0,0,0,0.5);
+  }
+  ::-webkit-scrollbar-thumb{
+    background: var(--secondary-blue-theme);
+    border-radius: 3px;
+  } 
+.arrow_inside_button{
+    position: absolute;
+    left: 0%;
+    top: 60px;
+    background: var(--secondary-blue-theme);
+    border: navajowhite;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 9;
+    cursor: pointer;
+    border-radius: 0px 10px 10px 0;
+}
+.d_none{
+    display: none;
+}
+#react-flow__arrowclosed{
+    background: black;
+    color: black;
+    stroke: black;
+}
+.toolbar_2 .selection_board{
+    position: fixed;
+    left: 80.5%;
+    top: 92%;
+    display: flex;
+    flex-direction: row;
+    z-index: 1000;
+    margin: 0 ;
+    padding: 0;
+    background: none;
+}
+.selection_board .color_options select{
+    margin-left: 1rem;
+    background: #3e4454;
+    color: white;
+    font-family: inherit;
+    font-weight: 500;
+    outline: none;
+}
+.handle_none{
+    display: none;
+}

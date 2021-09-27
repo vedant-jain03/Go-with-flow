@@ -1,0 +1,109 @@
+.container-w100{
+    width: 100%;
+    overflow: hidden;
+    padding-top: 2rem;
+}
+.container-w100 .main{
+    background: var(--blue-theme);
+    display: flex;
+    flex-direction: column;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 2rem;
+    background: var(--blue-theme);
+}
+.nav-heading{
+    color: white;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.navbar div{
+    display: flex;
+    align-items: center;
+}
+.avatar-img{
+    border-radius: 50%;
+    margin: 0 1rem;
+}
+.home-bg{
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+}
+.home-bg img{
+    width: 30rem;
+}
+.company-desc{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.heading2{
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: white;
+}
+.desc{
+    color: white;
+    margin-bottom: 1rem;
+}
+.colory{
+    color: var(--yellow-theme);
+}
+.heading5{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.title-heading{
+    color: white;
+    font-weight: 600;
+    position: relative;
+}
+.projects{
+    padding: 2rem;
+}
+.wrapper{
+    padding: 1rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.projectcard{
+    background: #3e4454;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 13rem;
+    width: 15rem;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 0 0 1px 1px rgb(0 0 0 / 10%);
+    margin: 1rem;
+    color: white;
+    position: relative;
+}
+.delete-icon{
+    position: absolute;
+    top: 1%;
+    left: 89%;
+    background: #ff6666;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.delete-icon:hover{
+    padding: 2px;
+}
+.projectcard:hover{
+    background: #171c2b;
+}
+.projectcard span{
+    font-size: 2rem;
+}

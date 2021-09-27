@@ -1,0 +1,111 @@
+:root{
+    --blue-theme : rgb(23 28 43);
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0%;
+
+}
+a{
+    text-decoration: none;
+}
+.login{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.container-lr{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.login .container-lr .left{
+    flex: 0.7;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    text-align: center;
+}
+.login .container-lr .right{
+    flex: 0.3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    background: rgb(23 28 43);
+    align-items: center;
+}
+
+.login .container-lr .left h3{
+    font-size: 4rem;
+    color: rgb(23 28 43);
+    margin: 0;
+}
+.login .container-lr .left .para{
+    color: rgb(23 28 43);
+    font-weight: 500;
+}
+.login .container-lr .right h3{
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+}
+.login .container-lr .right h4{
+    text-align: center;
+    color: white;
+    font-weight: 400;
+}
+.login .container-lr .right .input_container{
+    margin-top: 1rem;
+}
+.login .container-lr .right .input-field{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.login .container-lr .right .input-field h4{
+    color: white;
+    font-weight: 400;
+    text-align: left;
+}
+.login .container-lr .right .input-field input{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: var(--blue-theme) ;
+    font-family: inherit;
+    margin: 10px 0;
+}
+button.button-1{
+    width: 50%;
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+button.button-1:hover {
+    background: white;
+    color: rgb(23 28 43);
+}
+.message-log{
+    color: white;
+    margin: 10px;
+}
+.login .container-lr .right .message-log a{
+    color: white;
+    font-weight: 700;
+}
