@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
 app.get('/',(req,res)=>{
-    res.cookie("cookienAME","cookie")
+    res.send("Backend Heroku");
 })
 app.use(require('./Routings/auth'))
 require('./DB/connection.js')
