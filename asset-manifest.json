@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Go-with-flow/static/css/main.49b8548e.chunk.css",
+    "main.js": "/Go-with-flow/static/js/main.383f72c4.chunk.js",
+    "main.js.map": "/Go-with-flow/static/js/main.383f72c4.chunk.js.map",
+    "runtime-main.js": "/Go-with-flow/static/js/runtime-main.b6d589a7.js",
+    "runtime-main.js.map": "/Go-with-flow/static/js/runtime-main.b6d589a7.js.map",
+    "static/js/2.e63212f3.chunk.js": "/Go-with-flow/static/js/2.e63212f3.chunk.js",
+    "static/js/2.e63212f3.chunk.js.map": "/Go-with-flow/static/js/2.e63212f3.chunk.js.map",
+    "index.html": "/Go-with-flow/index.html",
+    "static/css/main.49b8548e.chunk.css.map": "/Go-with-flow/static/css/main.49b8548e.chunk.css.map",
+    "static/js/2.e63212f3.chunk.js.LICENSE.txt": "/Go-with-flow/static/js/2.e63212f3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6d589a7.js",
+    "static/js/2.e63212f3.chunk.js",
+    "static/css/main.49b8548e.chunk.css",
+    "static/js/main.383f72c4.chunk.js"
+  ]
+}
