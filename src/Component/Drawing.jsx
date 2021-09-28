@@ -64,7 +64,7 @@ export default () => {
     // UseEffects
     const loadMyProject = async () => {
         console.log(projectId);
-        const newdata = await axios.get(`http://localhost:5000/flowchart/${localStorage.getItem('projectId')}`);
+        const newdata = await axios.get(`https://go-with-flow.herokuapp.com/flowchart/${localStorage.getItem('projectId')}`);
         const data = await newdata.data;
         await setElements(JSON.parse(data.projectData[0].elements));
         const newelements = JSON.parse(data.projectData[0].elements);
