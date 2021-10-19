@@ -21,8 +21,12 @@ const App = () => {
   const [projectId, setprojectId] = useState('');
   const [loading, setloading] = useState(false);
   useEffect(() => {
+    if (localStorage.getItem('userexist') === true) {
+      setuserexist(true);
+    }
     if (localStorage.getItem('user')) {
       setuser(JSON.parse(localStorage.getItem('user')));
+      setuserexist(true);
     }
     if (localStorage.getItem('projectId')) {
       setprojectId(localStorage.getItem('projectId'));
@@ -39,24 +43,23 @@ const App = () => {
     <div className="app">
       {loading === true ? <Loading /> : null}
       <UserContext.Provider value={{ user, setuser, setuserexist, projectname, setprojectname, projectdata, setprojectdata, loading, setloading, projectId, setprojectId }} >
-        {/* {userexist===true?<Navbar />:null} */}
-        {userexist === false ?
-          <Router>
-            <Switch>
-              <Route exact path='/' component={Login} />
-              <Route exact path='/Register' component={Register} />
-              <Route exact path='/myflowcharts' component={Login} />
-              <Route exact path='/flowchart/:id' component={Login} />
-              <Route exact path='/login' component={Login} />
-            </Switch>
-          </Router>
-          :
+        {userexist === true ?
           <Router>
             <Switch>
               <Route exact path='/' component={Myflowchart} />
               <Route exact path='/Register' component={Register} />
               <Route exact path='/myflowcharts' component={Myflowchart} />
               <Route exact path='/flowchart/:id' component={Drawing} />
+              <Route exact path='/login' component={Login} />
+            </Switch>
+          </Router>
+          :
+          <Router>
+            <Switch>
+              <Route exact path='/' component={Login} />
+              <Route exact path='/Register' component={Register} />
+              <Route exact path='/myflowcharts' component={Login} />
+              <Route exact path='/flowchart/:id' component={Login} />
               <Route exact path='/login' component={Login} />
             </Switch>
           </Router>

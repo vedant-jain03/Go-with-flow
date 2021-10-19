@@ -19,6 +19,7 @@ function Login() {
         if(user_login.status === 200){
             await setuser(userdata.user);
             localStorage.setItem('user', JSON.stringify(userdata.user));
+            localStorage.setItem('userexist',true)
             await setuserexist(true);
             history.push('/');
         }
