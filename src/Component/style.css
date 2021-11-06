@@ -10,7 +10,7 @@
 .main_container{
     display: flex;
     width: 100%;
-    height: 143.5vh;
+    height: 100vh;
     overflow: hidden;
 }
 .toolbar{
@@ -20,6 +20,7 @@
     padding-top: 6rem;
     position: absolute;
     z-index: 7;
+    height: 100vh;
 }
 .flow_chart_canvas{
     height: auto;
@@ -201,6 +202,7 @@
     z-index: 9;
     cursor: pointer;
     border-radius: 0px 10px 10px 0;
+    box-shadow: 0 0 3px 0px rgb(0 0 0);
 }
 .d_none{
     display: none;
