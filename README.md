@@ -21,7 +21,7 @@
  <br />
 
    <p align="center">
-    ✨ Welcome to Hash/Hub ✨ <br />
+    ✨ Welcome to Go-with-Flow ✨ <br />
  
 </p>
 
