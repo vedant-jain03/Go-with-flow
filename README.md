@@ -46,8 +46,14 @@ This is a web application by which users can make flowcharts of any Algorithm. T
 
  <br />
 
-## Overview 
+## UI Samples
+
+- Recorded Sample:
+
+https://user-images.githubusercontent.com/76901313/166131673-dc1d2b51-11b2-49d8-bc09-8b2301ed15be.mp4
+
 - Login/signup
+
 ![Screenshot from 2022-05-01 09-17-31](https://user-images.githubusercontent.com/76901313/166131410-c033cef0-9b97-4ba4-bcd7-7e0b3fc675c1.png)
 
 - Dashboard
