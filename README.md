@@ -25,7 +25,10 @@
  
 </p>
 
-   
+## Testing Credentials
+- username: test@gmail.com
+- password: test123
+
 ## Table of Contents
 
     - Overview
