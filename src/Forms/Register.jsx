@@ -30,6 +30,7 @@ function Register() {
         else {
             const res = await result.json();
             seterror(res.message);
+            window.alert('Error, try again')
         }
     }
     return (

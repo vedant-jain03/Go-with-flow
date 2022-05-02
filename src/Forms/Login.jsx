@@ -14,17 +14,28 @@ function Login() {
     const [jwt,setjwt] = useState(null);
     const submit = async(e) =>{
         e.preventDefault();
-        const user_login = await axios.post('https://go-with-flow.herokuapp.com/login',{email, password});
-        const userdata = await user_login.data;
-        if(user_login.status === 200){
-            await setuser(userdata.user);
-            localStorage.setItem('user', JSON.stringify(userdata.user));
+        const result = await fetch("https://go-with-flow.herokuapp.com/login", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email, password
+            })
+        })
+        let user_dettails = await result.json();
+        console.log(user_dettails.user);
+        if(result.status != 200){
+            console.log("Errorvfni");
+            window.alert("Unauthorized User!");
+        }
+        else {
+            await setuser(user_dettails.user);
+            localStorage.setItem('user', JSON.stringify(user_dettails.user));
             localStorage.setItem('userexist',true)
             await setuserexist(true);
+            window.alert('Welcome to Go with Flow!');
             history.push('/');
-        }
-        else{
-            seterror(user.message);
         }
     }
     return (
