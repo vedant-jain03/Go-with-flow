@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Go-with-flow/static/css/main.bc19f77f.chunk.css",
-    "main.js": "/Go-with-flow/static/js/main.772d2dd5.chunk.js",
-    "main.js.map": "/Go-with-flow/static/js/main.772d2dd5.chunk.js.map",
+    "main.css": "/Go-with-flow/static/css/main.a7acee9e.chunk.css",
+    "main.js": "/Go-with-flow/static/js/main.aa1a3f7b.chunk.js",
+    "main.js.map": "/Go-with-flow/static/js/main.aa1a3f7b.chunk.js.map",
     "runtime-main.js": "/Go-with-flow/static/js/runtime-main.b6d589a7.js",
     "runtime-main.js.map": "/Go-with-flow/static/js/runtime-main.b6d589a7.js.map",
-    "static/js/2.880b1311.chunk.js": "/Go-with-flow/static/js/2.880b1311.chunk.js",
-    "static/js/2.880b1311.chunk.js.map": "/Go-with-flow/static/js/2.880b1311.chunk.js.map",
+    "static/js/2.3295f582.chunk.js": "/Go-with-flow/static/js/2.3295f582.chunk.js",
+    "static/js/2.3295f582.chunk.js.map": "/Go-with-flow/static/js/2.3295f582.chunk.js.map",
     "index.html": "/Go-with-flow/index.html",
-    "static/css/main.bc19f77f.chunk.css.map": "/Go-with-flow/static/css/main.bc19f77f.chunk.css.map",
-    "static/js/2.880b1311.chunk.js.LICENSE.txt": "/Go-with-flow/static/js/2.880b1311.chunk.js.LICENSE.txt"
+    "static/css/main.a7acee9e.chunk.css.map": "/Go-with-flow/static/css/main.a7acee9e.chunk.css.map",
+    "static/js/2.3295f582.chunk.js.LICENSE.txt": "/Go-with-flow/static/js/2.3295f582.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b6d589a7.js",
-    "static/js/2.880b1311.chunk.js",
-    "static/css/main.bc19f77f.chunk.css",
-    "static/js/main.772d2dd5.chunk.js"
+    "static/js/2.3295f582.chunk.js",
+    "static/css/main.a7acee9e.chunk.css",
+    "static/js/main.aa1a3f7b.chunk.js"
   ]
 }
