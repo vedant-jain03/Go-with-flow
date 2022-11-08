@@ -14,7 +14,7 @@ function Login() {
     const [jwt,setjwt] = useState(null);
     const submit = async(e) =>{
         e.preventDefault();
-        const result = await fetch("https://go-with-flow.herokuapp.com/login", {
+        const result = await fetch(`${process.env.REACT_APP_API_KEY}/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

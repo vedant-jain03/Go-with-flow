@@ -14,7 +14,7 @@ function Register() {
 
     const submit = async (e) => {
         e.preventDefault();
-        const result = await fetch("https://go-with-flow.herokuapp.com/register", {
+        const result = await fetch(`${process.env.REACT_APP_API_KEY}/register`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

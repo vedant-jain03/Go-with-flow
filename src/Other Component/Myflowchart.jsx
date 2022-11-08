@@ -6,15 +6,16 @@ import { useHistory } from "react-router-dom"
 import { UserContext } from '../App'
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const Popup = ({ setpopup }) => {
+const Popup = ({ setpopup, userAuth }) => {
 
     const history = useHistory();
     const { user, projectname, setprojectname } = useContext(UserContext);
     const createNewProject = async (e) => {
         e.preventDefault();
 
-        const newproject = await axios.post("https://go-with-flow.herokuapp.com/createNewProject", { email: user.email, projectname: projectname, elements: "[]" });
+        const newproject = await axios.post(`${process.env.REACT_APP_API_KEY}/createNewProject`, { email: user.email, projectname: projectname, elements: "[]" });
         setpopup(false);
+        userAuth();
     }
     return (
         <div id="popup_message">
@@ -29,12 +30,12 @@ const Popup = ({ setpopup }) => {
         </div>
     )
 }
-const ProjectCards = ({ item }) => {
+const ProjectCards = ({ item, userAuth }) => {
     const history = useHistory();
     const {user, projectname, setprojectname, projectdata, setprojectdata , projectId,setprojectId} = useContext(UserContext);
     const openProject = async (e) => {
         e.preventDefault();
-        const newdata = await axios.get(`https://go-with-flow.herokuapp.com/flowchart/${item._id}`);
+        const newdata = await axios.get(`${process.env.REACT_APP_API_KEY}/flowchart/${item._id}`);
         // setprojectdata()
         const data = await newdata.data;
         await setprojectdata(data.projectData);
@@ -48,8 +49,9 @@ const ProjectCards = ({ item }) => {
     const deleteProject = async () => {
         const output = await window.confirm('Are you sure');
         if(!output)return;
-        const data = await axios.delete(`https://go-with-flow.herokuapp.com/flowchart/${item._id}`);
+        const data = await axios.delete(`${process.env.REACT_APP_API_KEY}/flowchart/${item._id}`);
         console.log(data);
+        userAuth();
     }
     return (<div style={{position: 'relative'}}>
         <div className="projectcard" onClick={openProject} >
@@ -67,12 +69,13 @@ function Myflowchart() {
     const userAuth = async () => {
         
         try {
-            const output = await axios.get(`https://go-with-flow.herokuapp.com/getMyFlowcharts/${user.email}`);
+            const output = await axios.get(`${process.env.REACT_APP_API_KEY}/getMyFlowcharts/${user.email}`);
             const output2 = await output.data;
             
             if (output.status !== 200) {
                 throw new Error;
             }
+            console.log(process.env.REACT_APP_API_KEY);
             setUserProjects(output2.projects)
             
         }
@@ -84,11 +87,11 @@ function Myflowchart() {
     }
     useEffect(() => {
         userAuth();
-    })
+    }, [])
 
     return (
         <div>
-            {popup === true ? <Popup setpopup={setpopup} /> : null}
+            {popup === true ? <Popup setpopup={setpopup} userAuth={userAuth} /> : null}
             <MainNavbar />
             <div className="container-w100">
                 <div className="projects">
@@ -101,7 +104,7 @@ function Myflowchart() {
 
                         {
                             UserProjects.map((item) => (
-                                <ProjectCards item={item} />
+                                <ProjectCards item={item} userAuth={userAuth} />
                             ))
                         }
                     </div>
