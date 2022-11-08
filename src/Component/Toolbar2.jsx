@@ -18,8 +18,6 @@ function Toolbar2() {
         const edgeelement = await elements.map((item)=>(item.type !== 'rectangle' && item.type !== 'circle' && item.type !== 'rhombus' && item.type !== 'parallelogram' && item.type !== 'textfield')?(
             nodeelement.push(item)
         ):{})
-        console.log(nodeelement);
-        console.log(nodeelement);
         const newelement = JSON.stringify(nodeelement);
         const output = await axios.patch(`${process.env.REACT_APP_API_KEY}/saveMyProject/${projectdata[0]._id}`, { elements: newelement });
         setloading(false);

@@ -24,9 +24,7 @@ function Login() {
             })
         })
         let user_dettails = await result.json();
-        console.log(user_dettails.user);
         if(result.status != 200){
-            console.log("Errorvfni");
             window.alert("Unauthorized User!");
         }
         else {

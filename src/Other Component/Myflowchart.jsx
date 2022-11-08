@@ -50,7 +50,6 @@ const ProjectCards = ({ item, userAuth }) => {
         const output = await window.confirm('Are you sure');
         if(!output)return;
         const data = await axios.delete(`${process.env.REACT_APP_API_KEY}/flowchart/${item._id}`);
-        console.log(data);
         userAuth();
     }
     return (<div style={{position: 'relative'}}>
@@ -75,12 +74,10 @@ function Myflowchart() {
             if (output.status !== 200) {
                 throw new Error;
             }
-            console.log(process.env.REACT_APP_API_KEY);
             setUserProjects(output2.projects)
             
         }
         catch (err) {
-            console.log(err);
             history.push('/login');
         }
         
