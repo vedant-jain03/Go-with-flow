@@ -18,7 +18,7 @@ app.get('/',(req,res)=>{
 app.use(require('./Routings/auth'))
 require('./DB/connection.js')
 
-const PORT = process.env.PORT || 5000
+const PORT = 5000
 app.listen(PORT,()=>{
     console.log("Listening to PORT")
 })
