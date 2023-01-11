@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Go-with-flow/static/css/main.a7acee9e.chunk.css",
-    "main.js": "/Go-with-flow/static/js/main.93c0bd61.chunk.js",
-    "main.js.map": "/Go-with-flow/static/js/main.93c0bd61.chunk.js.map",
+    "main.js": "/Go-with-flow/static/js/main.aebcc704.chunk.js",
+    "main.js.map": "/Go-with-flow/static/js/main.aebcc704.chunk.js.map",
     "runtime-main.js": "/Go-with-flow/static/js/runtime-main.b6d589a7.js",
     "runtime-main.js.map": "/Go-with-flow/static/js/runtime-main.b6d589a7.js.map",
     "static/js/2.3295f582.chunk.js": "/Go-with-flow/static/js/2.3295f582.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.b6d589a7.js",
     "static/js/2.3295f582.chunk.js",
     "static/css/main.a7acee9e.chunk.css",
-    "static/js/main.93c0bd61.chunk.js"
+    "static/js/main.aebcc704.chunk.js"
   ]
 }
