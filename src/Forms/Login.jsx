@@ -50,7 +50,7 @@ function Login() {
                     <h4>Login to your account</h4>
                     <div className="input_container">
                     <div className="input-field">
-                        <h4>Username</h4>
+                        <h4>Email</h4>
                         <input type="text" autoComplete="true" value={email} onChange={e => setemail(e.target.value)} />
                     </div>
                     <div className="input-field">
