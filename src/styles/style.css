@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    isolation: isolate;
+    position: absolute;
+    width: 100%;
+    height: 3000px;
+    left: 0px;
+    top: 0px;
+    background: #111827;
+    overflow-x: hidden;
+    z-index: -1;
+
+    /* to remote */
+    overflow-y: hidden;
+}
+
+.homepage * {
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.container_pg_img {
+    position: absolute;
+    width: 2338px;
+    height: 4934px;
+    left: calc(50% - 2338px/2);
+    top: -431px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+
+.light_top {
+    position: absolute;
+    width: 1440px;
+    height: 863px;
+    left: 0px;
+    top: -431px;
+    background: #6C4BEF;
+    opacity: 0.4;
+    filter: blur(287.5px);
+}
+
+.bg_line {
+    position: absolute;
+    width: 1296px;
+    height: 1224px;
+    left: calc(50% - 1296px/2);
+    top: 0px;
+
+    opacity: 0.1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    justify-content: center;
+}
+
+.navigation {
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation .menu {
+    display: flex;
+}
+
+.navigation .menu * {
+    margin-right: 20px;
+    font-weight: 100;
+}
+
+.homepage .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 48px;
+    width: 100%;
+    height: 500px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.homepage .hero .h-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.h-text h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 72px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #E5E7EB;
+}
+
+.h-text h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #D1D5DB;
+    width: 600px;
+}
+
+.p-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 8px;
+    width: 208px;
+    height: 56px;
+    background: #6C4BEF;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.app_demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 112px;
+    gap: 4px;
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    z-index: 3;
+}
+
+.demo_app_img {
+    box-shadow: 0px 0px 24px #ffca64;
+    border-radius: 10px;
+    width: 1000px;
+}
+
+.aw-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.aw-header h4 {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    color: #D1D5DB;
+}
+.aw-header h1 {
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    color: #E5E7EB;
+}
+.tech_stack {
+    padding: 20px;
+    gap: 8px;
+    background: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+}
+.heading {
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 72px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #E5E7EB;
+    margin-bottom: 40px;
+}
+.ts_wrapper {
+    display: flex;   
+}
+.f-wrapper {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1139px;
+}
+.f-wrapper h3 {
+    font-weight: 100;
+    font-size: 14px;
+}
+.f-wrapper a {
+    margin: 5px;
+}
+.header .btn div * {
+    margin-left: 10px;
+}

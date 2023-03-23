@@ -13,7 +13,11 @@ const Popup = ({ setpopup, userAuth }) => {
     const createNewProject = async (e) => {
         e.preventDefault();
 
-        const newproject = await axios.post(`${process.env.REACT_APP_API_KEY}/createNewProject`, { email: user.email, projectname: projectname, elements: "[]" });
+        const newproject = await axios.post(`${process.env.REACT_APP_API_KEY}/user/${user._id}/project`, { email: user.email, projectname: projectname, elements: "[]" }, {
+            headers: {
+                'Authorization': `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`
+            }
+        });
         setpopup(false);
         userAuth();
     }
@@ -32,27 +36,36 @@ const Popup = ({ setpopup, userAuth }) => {
 }
 const ProjectCards = ({ item, userAuth }) => {
     const history = useHistory();
-    const {user, projectname, setprojectname, projectdata, setprojectdata , projectId,setprojectId} = useContext(UserContext);
+    const { user, projectname, setprojectname, projectdata, setprojectdata, projectId, setprojectId } = useContext(UserContext);
     const openProject = async (e) => {
         e.preventDefault();
-        const newdata = await axios.get(`${process.env.REACT_APP_API_KEY}/flowchart/${item._id}`);
+        const newdata = await axios.get(`${process.env.REACT_APP_API_KEY}/user/${user._id}/project/${item._id}`, {
+            headers: {
+                'Authorization': `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`
+            }
+        });
         // setprojectdata()
-        const data = await newdata.data;
-        await setprojectdata(data.projectData);
-        await localStorage.setItem('projectId',data.projectData[0]._id);
-        await localStorage.setItem('projectDetails',JSON.stringify(data.projectData))
-        await localStorage.setItem('projectName',data.projectData[0].projectname);
-        await setprojectId(data.projectData[0]._id);
-        await setprojectname(data.projectData[0].projectname);
+        const data = await newdata.data.project;
+        await setprojectdata(data);
+        await localStorage.setItem('projectId', data._id);
+        await localStorage.setItem('projectDetails', JSON.stringify(data))
+        await localStorage.setItem('projectName', data.projectname);
+        await setprojectId(data._id);
+        await setprojectname(data.projectname);
         history.push(`/flowchart/${item.projectname}`);
     }
     const deleteProject = async () => {
         const output = await window.confirm('Are you sure');
-        if(!output)return;
-        const data = await axios.delete(`${process.env.REACT_APP_API_KEY}/flowchart/${item._id}`);
+        if (!output) return;
+        // /:id/project/:project_id
+        const data = await axios.delete(`${process.env.REACT_APP_API_KEY}/user/${user._id}/project/${item._id}`, {
+            headers: {
+                'Authorization': `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`
+            }
+        });
         userAuth();
     }
-    return (<div style={{position: 'relative'}}>
+    return (<div style={{ position: 'relative' }}>
         <div className="projectcard" onClick={openProject} >
             <h3 className="title-heading">{item.projectname}</h3>
         </div>
@@ -61,26 +74,30 @@ const ProjectCards = ({ item, userAuth }) => {
     )
 }
 function Myflowchart() {
-    const { user, projectname, setprojectname, loading,setloading } = useContext(UserContext);
+    const { user, projectname, setprojectname, loading, setloading } = useContext(UserContext);
     const [popup, setpopup] = useState(false);
     const history = useHistory();
     const [UserProjects, setUserProjects] = useState([]);
     const userAuth = async () => {
-        
+
         try {
-            const output = await axios.get(`${process.env.REACT_APP_API_KEY}/getMyFlowcharts/${user.email}`);
+            const output = await axios.get(`${process.env.REACT_APP_API_KEY}/user/${user._id}/projects`, {
+                headers: {
+                    'Authorization': `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`
+                }
+            });
             const output2 = await output.data;
-            
+
             if (output.status !== 200) {
                 throw new Error;
             }
             setUserProjects(output2.projects)
-            
+
         }
         catch (err) {
             history.push('/login');
         }
-        
+
     }
     useEffect(() => {
         userAuth();
@@ -92,7 +109,7 @@ function Myflowchart() {
             <MainNavbar />
             <div className="container-w100">
                 <div className="projects">
-                    <center><h1 className="title-heading" style={{color: 'black', textTransform: 'uppercase'}} >My FlowCharts</h1></center>
+                    <center><h1 className="title-heading" style={{ color: 'black', textTransform: 'uppercase' }} >My FlowCharts</h1></center>
                     <div className="wrapper">
                         <div className="projectcard add-project" onClick={() => setpopup(true)} >
                             <span className="title-heading">+</span>

@@ -29,7 +29,7 @@ export { navbarContext }
 
 export default () => {
     // States
-    const { user, projectname, projectdata, setloading, setprojectdata, projectId,setprojectId } = useContext(UserContext)
+    const { user, userexist, projectname, projectdata, setloading, setprojectdata, projectId, setprojectId } = useContext(UserContext)
     const history = useHistory()
     const [elements, setElements] = useState([]);
     const [popup, setpopup] = useState(false);
@@ -55,7 +55,7 @@ export default () => {
         const download = await htmlToImage.toJpeg(document.getElementById('flow_chart'), { quality: 1 })
             .then(function (dataUrl) {
                 var link = document.createElement('a');
-                link.download = `${projectname}_flowchart.jpeg`;
+                link.download = (userexist) ? (`${projectname}_flowchart.jpeg`) : ("my_flowchart.jpeg");
                 link.href = dataUrl;
                 link.click();
             });
@@ -63,17 +63,22 @@ export default () => {
     }
     // UseEffects
     const loadMyProject = async () => {
-        const newdata = await axios.get(`${process.env.REACT_APP_API_KEY}/flowchart/${localStorage.getItem('projectId')}`);
-        const data = await newdata.data;
-        await setElements(JSON.parse(data.projectData[0].elements));
-        const newelements = JSON.parse(data.projectData[0].elements);
-        if(newelements.length === 0 )return;
+        const newdata = await axios.get(`${process.env.REACT_APP_API_KEY}/user/${user._id}/project/${localStorage.getItem('projectId')}`, {
+            headers: {
+                'Authorization': `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`
+            }
+        });
+        const data = await newdata.data.project;
+        await setElements(JSON.parse(data.elements));
+        const newelements = JSON.parse(data.elements);
+        if (newelements.length === 0) return;
         setBackground(newelements[0].data.bgcolor);
         setBorderColor(newelements[0].data.brcolor);
         setBoxTextColor(newelements[0].data.txtcolor);
     }
     useEffect(() => {
-        loadMyProject();
+        if(userexist) loadMyProject();
+        document.title = 'Go With Flow | Simulator';
     }, [])
     useEffect(() => {
         const newelements = elements.map((item) => (
@@ -297,7 +302,7 @@ export default () => {
     return (
         <>
             <MainNavbar active="Simulator" />
-            <drawingcontext.Provider value={{ insertrect, insertcircle, insertPara, insertRhombus, setpopup, setshapetext, setShapeSelected, shapeSelected, addedgeStyles, insertText, setBackground, Boxbackground, setBackground, BoxTextColor, setBoxTextColor, BorderColor, setBorderColor, edgeColor, setedgeColor, canvastype, canvasBg, setcanvastype, setcanvasBg, downloadPng, toolbar, settoolbar, elements, setElements }} >
+            <drawingcontext.Provider value={{ toolbar, settoolbar, insertrect, insertcircle, insertPara, insertRhombus, setpopup, setshapetext, setShapeSelected, shapeSelected, addedgeStyles, insertText, setBackground, Boxbackground, setBackground, BoxTextColor, setBoxTextColor, BorderColor, setBorderColor, edgeColor, setedgeColor, canvastype, canvasBg, setcanvastype, setcanvasBg, downloadPng, elements, setElements }} >
                 {
                     popup === false ? null :
                         <Popup />
@@ -327,7 +332,7 @@ export default () => {
                         </div>
                         <Toolbar2 />
                     </ReactFlowProvider>
-                    
+
                 </div>
             </drawingcontext.Provider>
         </>

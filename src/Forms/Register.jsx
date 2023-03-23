@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./style.css"
 import { Link, useHistory } from "react-router-dom"
 import axios from "axios"
@@ -9,18 +9,21 @@ function Register() {
     const [name, setname] = useState();
     const [email, setemail] = useState();
     const [password, setpassword] = useState();
-    const [cpassword, setcpassword] = useState();
+    const [active, setActive] = useState(false);
     // history.p
-
+    useEffect(() => {
+        if (name && email && password) setActive(true);
+    }, [name, email, password])
     const submit = async (e) => {
         e.preventDefault();
-        const result = await fetch(`${process.env.REACT_APP_API_KEY}/register`, {
+        const result = await fetch(`${process.env.REACT_APP_API_KEY}/auth/register`, {
             method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`
             },
             body: JSON.stringify({
-                name, email, password, cpassword
+                name, email, password
             })
         })
         if (result.status === 201) {
@@ -30,7 +33,7 @@ function Register() {
         else {
             const res = await result.json();
             seterror(res.message);
-            window.alert('Error, try again')
+            window.alert(res.message)
         }
     }
     return (
@@ -58,12 +61,11 @@ function Register() {
                             <h4>Password</h4>
                             <input type="password" value={password} autoComplete="false" onChange={e => setpassword(e.target.value)} />
                         </div>
-                        <div className="input-field">
-                            <h4>Confirm Password</h4>
-                            <input type="password" value={cpassword} onChange={e => setcpassword(e.target.value)} />
-                        </div>
                     </div>
-                    <button className="button-1" onClick={submit}>Signup</button>
+                    {
+                        active ? <button className="button-1" onClick={submit}>Signup</button> :
+                        <button className="button-1" onClick={submit} style={{opacity: '0.5', cursor: 'not-allowed'}}>Signup</button>
+                    }
                     <span className="message-log">{error}</span>
                     <span className="message-log">Already have account? <Link to="/login">Login</Link></span>
                 </div>

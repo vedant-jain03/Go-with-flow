@@ -14,10 +14,11 @@ function Login() {
     const [jwt,setjwt] = useState(null);
     const submit = async(e) =>{
         e.preventDefault();
-        const result = await fetch(`${process.env.REACT_APP_API_KEY}/login`, {
+        const result = await fetch(`${process.env.REACT_APP_API_KEY}/auth/login`, {
             method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`
             },
             body: JSON.stringify({
                 email, password
@@ -25,7 +26,7 @@ function Login() {
         })
         let user_dettails = await result.json();
         if(result.status != 200){
-            window.alert("Unauthorized User!");
+            window.alert(user_dettails.message);
         }
         else {
             await setuser(user_dettails.user);
