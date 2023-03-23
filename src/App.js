@@ -2,7 +2,7 @@ import './App.css';
 import Drawing from './Component/Drawing';
 import Login from "./Forms/Login";
 import Register from "./Forms/Register"
-import { BrowserRouter as Router, Route, Link, Switch, useHistory, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Switch, useHistory, Redirect } from 'react-router-dom';
 import Navbar from "./Other Component/MainNavbar";
 import { createContext, useEffect, useState } from 'react';
 import Myflowchart from './Other Component/Myflowchart';
