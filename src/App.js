@@ -2,8 +2,7 @@ import './App.css';
 import Drawing from './Component/Drawing';
 import Login from "./Forms/Login";
 import Register from "./Forms/Register"
-import { HashRouter as Router, Route, Link, Switch, useHistory, Redirect } from 'react-router-dom';
-import Navbar from "./Other Component/MainNavbar";
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { createContext, useEffect, useState } from 'react';
 import Myflowchart from './Other Component/Myflowchart';
 import axios from "axios"
@@ -15,7 +14,6 @@ axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 const UserContext = createContext(null);
 export { UserContext }
 const App = () => {
-  let history = useHistory();
   const [user, setuser] = useState([]);
   const [userexist, setuserexist] = useState(false);
   const [projectname, setprojectname] = useState("");
@@ -39,6 +37,7 @@ const App = () => {
     if (localStorage.getItem('projectName') !== "null") {
       setprojectname(localStorage.getItem('projectName'));
     }
+    console.log('appp')
     localStorage.getItem('userexist')
   }, [userexist])
   return (
