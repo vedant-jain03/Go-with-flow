@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Go-with-flow/static/css/main.df37e989.chunk.css",
-    "main.js": "/Go-with-flow/static/js/main.7cbdc4a5.chunk.js",
-    "main.js.map": "/Go-with-flow/static/js/main.7cbdc4a5.chunk.js.map",
+    "main.js": "/Go-with-flow/static/js/main.b80020ef.chunk.js",
+    "main.js.map": "/Go-with-flow/static/js/main.b80020ef.chunk.js.map",
     "runtime-main.js": "/Go-with-flow/static/js/runtime-main.b6d589a7.js",
     "runtime-main.js.map": "/Go-with-flow/static/js/runtime-main.b6d589a7.js.map",
-    "static/js/2.03a10cd5.chunk.js": "/Go-with-flow/static/js/2.03a10cd5.chunk.js",
-    "static/js/2.03a10cd5.chunk.js.map": "/Go-with-flow/static/js/2.03a10cd5.chunk.js.map",
+    "static/js/2.51aca238.chunk.js": "/Go-with-flow/static/js/2.51aca238.chunk.js",
+    "static/js/2.51aca238.chunk.js.map": "/Go-with-flow/static/js/2.51aca238.chunk.js.map",
     "index.html": "/Go-with-flow/index.html",
     "static/css/main.df37e989.chunk.css.map": "/Go-with-flow/static/css/main.df37e989.chunk.css.map",
-    "static/js/2.03a10cd5.chunk.js.LICENSE.txt": "/Go-with-flow/static/js/2.03a10cd5.chunk.js.LICENSE.txt",
+    "static/js/2.51aca238.chunk.js.LICENSE.txt": "/Go-with-flow/static/js/2.51aca238.chunk.js.LICENSE.txt",
     "static/media/app_demo_img.7ea4bae2.png": "/Go-with-flow/static/media/app_demo_img.7ea4bae2.png",
     "static/media/app_demo_img2.70cc2641.png": "/Go-with-flow/static/media/app_demo_img2.70cc2641.png",
     "static/media/bg_line.c7f4b64b.png": "/Go-with-flow/static/media/bg_line.c7f4b64b.png",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b6d589a7.js",
-    "static/js/2.03a10cd5.chunk.js",
+    "static/js/2.51aca238.chunk.js",
     "static/css/main.df37e989.chunk.css",
-    "static/js/main.7cbdc4a5.chunk.js"
+    "static/js/main.b80020ef.chunk.js"
   ]
 }
