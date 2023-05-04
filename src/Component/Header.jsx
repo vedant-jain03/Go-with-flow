@@ -1,8 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { UserContext } from '../App'
+import { useRef } from 'react';
+import { gsap } from 'gsap';
 
 function Header() {
+    const headerRef = useRef(null);
     const { user, setuser, setuserexist, userexist } = useContext(UserContext);
     const history = useHistory();
     const logout = async () => {
@@ -20,6 +23,9 @@ function Header() {
         }
     }
     useEffect(() => {
+        gsap.fromTo(headerRef.current, 1.5, {opacity: 0, y: -30}, {opacity:1, delay: 0.2, y: 0, ease: 'elastic'});
+    }, [])
+    useEffect(() => {
         if (localStorage.getItem('userexist') === "true") {
             setuserexist(true);
         }
@@ -28,7 +34,7 @@ function Header() {
         }
     }, [userexist])
     return (
-        <div className='header'>
+        <div className='header' ref={headerRef}>
             <div className="navigation">
                 <div className="logo">Go With Flow</div>
                 <div className="menu">

@@ -14,17 +14,17 @@
     isolation: isolate;
     position: absolute;
     width: 100%;
-    height: 3000px;
+    height: 4250px;
     left: 0px;
     top: 0px;
     background: #111827;
     overflow-x: hidden;
     z-index: -1;
-
-    /* to remote */
     overflow-y: hidden;
 }
-
+.homepage {
+    overflow-x: hidden !important;
+}
 .homepage * {
     color: white;
     font-family: 'Space Grotesk', sans-serif;
@@ -33,7 +33,7 @@
 .container_pg_img {
     position: absolute;
     width: 2338px;
-    height: 4934px;
+    height: 4690px;
     left: calc(50% - 2338px/2);
     top: -431px;
     flex: none;
@@ -52,7 +52,9 @@
     opacity: 0.4;
     filter: blur(287.5px);
 }
-
+.footer {
+    padding: 0 !important;
+}
 .bg_line {
     position: absolute;
     width: 1296px;
@@ -68,6 +70,8 @@
     align-items: center;
     height: 100px;
     justify-content: center;
+    position: relative;
+    opacity: 0;
 }
 
 .navigation {
@@ -94,7 +98,7 @@
     padding: 0px;
     gap: 48px;
     width: 100%;
-    height: 500px;
+    height: 620px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -129,7 +133,14 @@
     color: #D1D5DB;
     width: 600px;
 }
-
+.feature-wrapper {
+    display: flex;
+    overflow-x: hidden;
+}
+#feature-heading {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
 .p-btn {
     display: flex;
     flex-direction: row;
@@ -156,13 +167,14 @@
     order: 3;
     align-self: stretch;
     flex-grow: 0;
+    width: 100vw;
     z-index: 3;
 }
 
 .demo_app_img {
     box-shadow: 0px 0px 24px #ffca64;
     border-radius: 10px;
-    width: 1000px;
+    width: 900px;
 }
 
 .aw-header {
